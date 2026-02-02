@@ -1,0 +1,278 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Reuse earlier styles for the video wrapper */
+.apv-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: visible;
+}
+
+.apv-overlay {
+  pointer-events: none
+}
+
+.apv-inner {
+  position: relative;
+  /* width: 100%; */
+  border-radius: 10px;
+  /* overflow: hidden; */
+  /* box-shadow: 0 6px 18px rgba(3, 7, 18, 0.5); */
+}
+
+.apv-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background: transparent;
+  object-fit: cover;
+}
+
+/* Message overlay */
+.apv-message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  pointer-events: none;
+  width: min(78%, 720px);
+}
+
+.apv-message-inner {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.58);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2, 8, 23, 0.5);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  pointer-events: none;
+}
+
+.apv-message-text {
+  margin: 0;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* words styling */
+.apv-word {
+  margin-right: 6px;
+  color: #fff;
+}
+
+/* completed word: slightly brighter; pop animation handled in component */
+.apv-word-done {
+  color: #fff;
+}
+
+/* caret (blinking) shown next to the current typing word */
+.apv-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  background: #fff;
+  margin-left: 4px;
+  vertical-align: middle;
+  opacity: 1;
+  animation: apv-caret-blink 1s steps(2, start) infinite;
+  transform-origin: center;
+}
+
+@keyframes apv-caret-blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* play overlay fallback */
+.apv-play-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.apv-play-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  transition: transform .18s ease, background .18s ease;
+}
+
+.apv-play-btn:hover {
+  transform: scale(1.06);
+  background: rgba(0, 0, 0, 0.72);
+}
+
+/* reduced motion: show message immediately and hide caret */
+@media (prefers-reduced-motion: reduce) {
+  .apv-message {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .apv-caret {
+    display: none !important;
+  }
+}
+
+
+.rotate3d-wrapper {
+  transform-style: preserve-3d
+}
+
+/* ensure elements using Rotate3DOnHover keep 3d context */
+.rotate3d-wrapper,
+.rotate3d-wrapper * {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ---------- SectionDivider ---------- */
+.section-divider {
+  padding: 1rem 0;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.sd-inner {
+  width: min(1100px, 92%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.sd-line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.14), rgba(255, 255, 255, 0.02));
+  border-radius: 2px;
+}
+
+.sd-title {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.12), rgba(124, 58, 237, 0.06));
+  color: #dfe7ff;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Magnetic button ---------- */
+.magnetic-btn {
+  background: linear-gradient(90deg, rgba(124, 58, 237, 1), rgba(99, 102, 241, 1));
+  color: white;
+  padding: 0.7rem 1.1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.18);
+  font-weight: 600;
+  transform-origin: center;
+}
+
+/* ---------- Particles background canvas layer already positioned in component ---------- */
+
+/* ---------- Hero glow ---------- */
+.hero-inner .title {
+  text-shadow: 0 6px 28px rgba(124, 58, 237, 0.14), 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero {
+  position: relative;
+  overflow: visible;
+  padding: 6rem 1rem;
+}
+
+/* small tune for section dive / "jarvis" feeling */
+.text-gradient {
+  background: linear-gradient(90deg, #b9a7ff 0%, #9fd7ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ensure good z stacking for canvas */
+canvas {
+  z-index: -1;
+}
