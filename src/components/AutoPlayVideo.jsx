@@ -14,23 +14,17 @@ const CONFIG = {
     // Intersection threshold to consider the component "in view" (0..1)
     IN_VIEW_RATIO: 0.5,
 
-    // While typing, video opacity will be capped at this value.
-    // Set lower to keep poster more dominant during typing; set to 1 to allow full visibility during typing.
-    TYPING_CAP: 1,
+    // Video stays hidden until dialogue is 100% complete
+    TYPING_CAP: 0,
 
-    // Fraction of typing progress (0..1) after which we attempt to play video early (buffer/play).
-    // Lower => attempt play earlier. E.g. 0.25 triggers play when ~99% typed.
-    PLAY_FRACTION_TRIGGER: 0.99,
-
-    // Motion spring settings used for video opacity animation.
-    // Higher stiffness = faster snap; higher damping = less overshoot.
+    // Motion spring settings for video opacity (only used when revealing after typing done)
     VID_SPRING: { stiffness: 120, damping: 20 },
 
     // If user prefers reduced motion, wait this ms then force visible + play
     TYPING_REDUCED_DELAY: 120,
 
     // How quickly overlay exit animates when it is removed (in seconds)
-    OVERLAY_EXIT_DURATION: 0.1,
+    OVERLAY_EXIT_DURATION: 0.25,
 };
 /* ---------------------------------------------------------------- */
 
@@ -211,28 +205,13 @@ export default function AutoPlayVideo({
         });
     };
 
-    // video opacity ramping logic: map typing progress to target opacity
+    // Keep video hidden until dialogue is 100% complete; only then reveal + play (handled in typing effect)
     useEffect(() => {
-        if (!showMessage) return;
-        // compute fraction typed: (completedWords + progress in current word)/totalWords
-        const totalWords = words.length;
-        const curWordLen = words[wordIndex] ? words[wordIndex].length : 0;
-        const curProgress = curWordLen ? charIndex / curWordLen : 0;
-        const fraction = Math.min(1, (completedWords + curProgress) / totalWords);
-
-        // video opacity target: while typing, cap opacity below 1 (so overlay still controls the final reveal).
-        // When typingDone becomes true, we immediately force 1 (handled in typing effect).
-        const minOpacity = 0.0;
-        const typingCap = CONFIG.TYPING_CAP; // use config
-        const computed = Math.min(typingCap, minOpacity + fraction * 1.08);
-        vidOpacity.set(computed);
-
-        // begin play early so content is buffering; doesn't change showMessage
-        if (fraction > CONFIG.PLAY_FRACTION_TRIGGER && !isPlaying && !autoplayBlocked) {
-            attemptPlay();
+        if (!typingDone) {
+            vidOpacity.set(0);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [completedWords, charIndex, wordIndex, showMessage]);
+    }, [typingDone, completedWords, wordIndex]);
 
     // When video visible enough (vidSpring approaching cap or 1) manage cursor
     useEffect(() => {
@@ -256,10 +235,19 @@ export default function AutoPlayVideo({
         }
     }, [autoplayBlocked]);
 
-    // Render UI
+    // Render UI: cover only until dialogue completes, then video visible and plays
     return (
-        <div ref={wrapperRef} className="apv-wrapper" style={{ position: "relative", width: "100%" }}>
-            {/* Video element (opacity will be animated by vidSpring) */}
+        <div
+            ref={wrapperRef}
+            className="apv-wrapper apv-wrapper--fill"
+            style={{
+                position: "relative",
+                width: "100%",
+                minHeight: "100vh",
+                height: "-webkit-fill-available",
+            }}
+        >
+            {/* Video element: hidden until typingDone, then fade in and play */}
             <motion.video
                 ref={videoRef}
                 src={src}
@@ -268,12 +256,9 @@ export default function AutoPlayVideo({
                 muted
                 playsInline
                 preload="metadata"
-                className="apv-video"
+                className="apv-video apv-video--fill"
                 controls={false}
                 style={{
-                    width: "100%",
-                    display: "block",
-                    borderRadius: 10,
                     opacity: vidSpring,
                 }}
                 onPlay={() => {
@@ -296,7 +281,6 @@ export default function AutoPlayVideo({
                         initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0, transition: { duration: CONFIG.OVERLAY_EXIT_DURATION } }}
-                        transition={{ duration: CONFIG.OVERLAY_EXIT_DURATION }}
                         style={{
                             position: "absolute",
                             inset: 0,
@@ -304,20 +288,22 @@ export default function AutoPlayVideo({
                             alignItems: "center",
                             justifyContent: "center",
                             pointerEvents: "none",
+                            width: "100%",
+                            height: "100%",
                         }}
                     >
                         <div
-                            className="apv-poster"
+                            className="apv-poster apv-poster--fill"
                             aria-hidden
                             style={{
                                 position: "absolute",
                                 inset: 0,
+                                width: "-webkit-fill-available",
+                                height: "-webkit-fill-available",
                                 backgroundImage: `url(${poster})`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center center",
                                 backgroundRepeat: "no-repeat",
-                                borderRadius: 10,
-                                rotate:"270deg",
                                 pointerEvents: "none",
                             }}
                         />

@@ -1,0 +1,116 @@
+{
+  "profile": {
+    "name": "Shantanu Sadafale",
+    "title": "Full-Stack Developer",
+    "tagline": "React • Node • AWS • Delivery & Logistics Platforms",
+    "contact": {
+      "phone": "9370407508",
+      "resumePdf": "/SHANTANU_SADAFALE_9370407508_cv.pdf"
+    }
+  },
+  "projects": [
+    {
+      "id": "mangwale-rider-app",
+      "title": "Mangwale Rider App",
+      "shortTitle": "Rider App",
+      "tagline": "Real-time last-mile delivery partner app",
+      "summary": "React Native partner app for riders — real-time order assignment, FCM push, Socket.IO, wallet, attendance, and multi-stop deliveries.",
+      "description": "Full-stack rider onboarding and delivery management: rider registration with OTP/KYC, attendance with optional selfie, real-time order assignment via WebSocket + FCM, multi-stop deliveries, earnings & wallet, and admin back-office. Built with React Native (or rider-web React SPA), NestJS (rider-api), PostgreSQL, Socket.IO, Razorpay, and Firebase.",
+      "quote": "Real-time delivery at your fingertips.",
+      "thumbnail": "/download.jpg",
+      "heroImage": "/be1fd2c74b9befa134541732e66deaa0.jpg",
+      "tags": ["React Native", "Firebase", "Socket.IO", "FCM", "Real-time"],
+      "techStack": ["React Native", "NestJS", "PostgreSQL", "Socket.IO", "Firebase", "Razorpay", "Leaflet"],
+      "links": {
+        "playStore": "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME",
+        "liveDemo": null,
+        "caseStudy": null
+      },
+      "features": [
+        "Rider registration with OTP/KYC and document upload",
+        "Real-time order offers via WebSocket and FCM push",
+        "Multi-stop delivery flow with map and earnings",
+        "Wallet, withdrawals, and admin approval flow",
+        "Attendance with optional selfie and geo"
+      ],
+      "order": 1
+    },
+    {
+      "id": "mangwale-dispatcher",
+      "title": "Mangwale Dispatcher Platform",
+      "shortTitle": "Dispatcher",
+      "tagline": "Full-stack delivery management & B2B API",
+      "summary": "React dispatcher dashboard and NestJS API — multi-provider logistics (Porter, LoadShare, Mangwale), live tracking, and business.mangwale.com B2B portal.",
+      "description": "The Mangwale Dispatcher Platform consists of dispatcher-web (React SPA) and dispatcher-api (NestJS). It powers internal operations (track.mangwale.in) for delivery management, orders, riders, and admin, plus the B2B portal business.mangwale.com where enterprises sign up, get API keys, manage wallet (Razorpay recharge), and integrate delivery via REST API (quote, create order, cancel, track). Multi-provider logistics with Porter, LoadShare, and Mangwale Rider API; webhooks for status sync; live tracking with Leaflet/Google Maps.",
+      "quote": "One platform. Multi-provider logistics. Enterprise-ready API.",
+      "thumbnail": "/be1fd2c74b9befa134541732e66deaa0.jpg",
+      "heroImage": "/download.jpg",
+      "tags": ["React", "NestJS", "PostgreSQL", "Leaflet", "Razorpay", "B2B"],
+      "techStack": ["React 19", "NestJS 11", "TypeORM", "PostgreSQL", "Leaflet", "React Query", "Razorpay"],
+      "links": {
+        "playStore": null,
+        "liveDemo": "https://business.mangwale.com",
+        "tracking": "https://track.mangwale.in",
+        "caseStudy": null
+      },
+      "features": [
+        "Multi-provider logistics: Porter, LoadShare, Mangwale (unified getQuote, createOrder, cancel, track)",
+        "B2B portal: business.mangwale.com — landing, registration, dashboard, wallet, API keys, invoices, in-app API docs",
+        "Enterprise REST API with API key auth, rate limiting, test/live environments",
+        "Live rider location and status; public tracking pages with map and status timeline",
+        "Single and multi-stop orders; webhooks to helper.mangwale.com and provider webhooks"
+      ],
+      "order": 2
+    },
+    {
+      "id": "rider-api-web",
+      "title": "Rider Onboarding & Delivery Platform",
+      "shortTitle": "Rider API/Web",
+      "tagline": "Rider lifecycle, shipments, and admin back-office",
+      "summary": "NestJS rider-api and React rider-web — rider registration (OTP/KYC, Razorpay), attendance, real-time shipments, wallet, and admin panel with WebSocket + FCM.",
+      "description": "Full-stack rider onboarding and delivery management: rider-api (NestJS, TypeORM, PostgreSQL) and rider-web (React 19, Vite). Rider registration with OTP (Msg91 + email), selfie and documents, shifts, Razorpay registration fee; rider app with dashboard, new order popup (WebSocket + FCM), order flow (pickup → delivery), wallet, profile; admin panel for riders, shipments, attendance, zones, withdrawals. Real-time via Socket.IO namespaces (rider + admin) and FCM; maps with Leaflet and optional Google Maps; routing with Google Distance Matrix, OSRM, Turf.",
+      "quote": "From registration to delivery — one seamless flow.",
+      "thumbnail": "/download.jpg",
+      "heroImage": "/be1fd2c74b9befa134541732e66deaa0.jpg",
+      "tags": ["NestJS", "React", "Socket.IO", "FCM", "Razorpay", "PostgreSQL"],
+      "techStack": ["NestJS 11", "React 19", "Vite 7", "TypeORM", "PostgreSQL", "Socket.IO", "Firebase", "Razorpay", "Leaflet"],
+      "links": {
+        "playStore": null,
+        "liveDemo": null,
+        "caseStudy": null
+      },
+      "features": [
+        "Rider registration: OTP (Msg91 + email), address, selfie, documents, shifts, Razorpay; reupload via token links",
+        "Rider auth: password and OTP login; password reset; rider JWT for REST and WebSocket",
+        "Shipments: single and multi-stop; status lifecycle; assignments with timeouts; earnings with rate cards",
+        "Real-time: rider namespace (new_order, order_updated, order_cancelled); admin notifications namespace; FCM push",
+        "Wallet and withdrawal requests with admin approval; attendance with optional selfie and geo"
+      ],
+      "order": 3
+    },
+    {
+      "id": "driphunter-admin",
+      "title": "Driphunter Admin Panel",
+      "shortTitle": "Driphunter",
+      "tagline": "Admin tools and e-commerce integrations",
+      "summary": "Admin panel with Instagram and shipping integrations, automation, and reporting.",
+      "description": "Admin tools and back-office for Driphunter: Instagram integration, shipping integrations, automation workflows, and reporting. Built with CodeIgniter and custom API integrations.",
+      "quote": "Streamline operations. Scale with automation.",
+      "thumbnail": "/be1fd2c74b9befa134541732e66deaa0.jpg",
+      "heroImage": "/download.jpg",
+      "tags": ["CodeIgniter", "API", "Automation", "Instagram"],
+      "techStack": ["CodeIgniter", "PHP", "MySQL", "REST API"],
+      "links": {
+        "playStore": null,
+        "liveDemo": null,
+        "caseStudy": null
+      },
+      "features": [
+        "Instagram integration for content and analytics",
+        "Shipping and logistics API integrations",
+        "Automation and reporting tools"
+      ],
+      "order": 4
+    }
+  ]
+}

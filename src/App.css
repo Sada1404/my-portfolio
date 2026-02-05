@@ -53,6 +53,27 @@
   overflow: visible;
 }
 
+.apv-wrapper--fill {
+  max-width: none;
+  width: 100%;
+  width: -webkit-fill-available;
+  min-height: 100vh;
+  height: -webkit-fill-available;
+  border-radius: 0;
+}
+
+.apv-video--fill {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  width: -webkit-fill-available;
+  height: 100%;
+  height: -webkit-fill-available;
+  object-fit: cover;
+  border-radius: 0;
+}
+
 .apv-overlay {
   pointer-events: none
 }

@@ -1,0 +1,103 @@
+{
+  "technicalSkills": {
+    "Languages & Frameworks": [
+      { "name": "JavaScript (ES6+)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { "name": "TypeScript", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { "name": "PHP (CodeIgniter)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" }
+    ],
+    "Front-end": [
+      { "name": "React.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { "name": "React Native", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { "name": "Bootstrap", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+      { "name": "Tailwind CSS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { "name": "HTML5", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { "name": "CSS3", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { "name": "Vite", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" }
+    ],
+    "Back-end": [
+      { "name": "Node.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { "name": "NestJS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" },
+      { "name": "Express.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+      { "name": "Microservices", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" }
+    ],
+    "State Management": [
+      { "name": "React Context API", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { "name": "Redux", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" }
+    ],
+    "Databases": [
+      { "name": "MySQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { "name": "PostgreSQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { "name": "Firebase", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
+    ],
+    "APIs & Integrations": [
+      { "name": "REST APIs", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { "name": "Google APIs", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" }
+    ],
+    "DevOps & Tools": [
+      { "name": "AWS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { "name": "Docker", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+      { "name": "Git", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { "name": "GitHub", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { "name": "Jenkins", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
+      { "name": "Jest", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" },
+      { "name": "Figma", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" }
+    ]
+  },
+  "experience": [
+    {
+      "company": "Mangwale Pvt. Ltd",
+      "role": "Full Stack Developer (Team Lead)",
+      "location": "Nashik, MH",
+      "period": "March 2025 – Present",
+      "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop",
+      "points": [
+        "Pioneered micro-frontend architecture using React.js and NestJS, streamlining onboarding and boosting front-end efficiency by 40%.",
+        "Engineered the Track Dispatcher Portal, slashing dispatch time by 15 seconds and increasing order fulfillment rates by 12%; integrated real-time APIs with Porter and LoadShare.",
+        "Developed Mangwale V2 (PaaS) admin panel with modular e-commerce features. Deployed on AWS using Docker and NGINX for high availability.",
+        "Deployed containerized microservices (Java Spring Boot, Node.js) on AWS and implemented CI/CD with Jenkins and GitHub Actions."
+      ]
+    },
+    {
+      "company": "Avhad Enterprises",
+      "role": "Software R&D Executive",
+      "location": "Nashik, MH",
+      "period": "July 2024 – March 2025",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=200&h=200&fit=crop",
+      "points": [
+        "Built centralized social media automation tools and shipping integrations using React.js and PHP.",
+        "Developed a dynamic collection engine and web configuration panel with Figma-accurate interfaces."
+      ]
+    },
+    {
+      "company": "ABB India Pvt. Ltd.",
+      "role": "Web Application Developer (Intern)",
+      "location": "Nashik, MH",
+      "period": "Aug 2023 – Feb 2024",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=200&h=200&fit=crop",
+      "points": [
+        "Created PowerApps and SharePoint-based automation tools for purchase systems.",
+        "Delivered end-user training and achieved a 50% reduction in manual workload."
+      ]
+    },
+    {
+      "company": "Hindustan Aeronautics Limited (HAL)",
+      "role": "ERP Intern",
+      "location": "Nashik, MH",
+      "period": "May 2023 – Jun 2023",
+      "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&h=200&fit=crop",
+      "points": ["Supported ERP system optimization and cross-departmental IT support tasks."]
+    }
+  ],
+  "achievements": [
+    "Reduced dispatch time by 60% through process automation at Mangwale.",
+    "Developed Shopify-like admin tools for multi-feature management.",
+    "Runner-up in ABB India's automation software challenge."
+  ],
+  "education": {
+    "degree": "Bachelor of Engineering (B.E.) in Computer Engineering",
+    "institution": "Guru Gobind Singh College of Engineering & Research Centre, Nashik",
+    "period": "2020 – 2024",
+    "percentage": "70.20%"
+  },
+  "languages": ["English (Fluent)", "Hindi (Fluent)", "Marathi (Native)"]
+}
