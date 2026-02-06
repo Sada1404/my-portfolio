@@ -5,6 +5,8 @@ import './App.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { CursorPositionProvider } from "./contexts/CursorPositionContext";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
+import CursorFollower from "./components/CursorFollower";
+import ScrollProgress from "./components/ScrollProgress";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import SkillsPage from "./pages/SkillsPage";
@@ -15,6 +17,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <CursorPositionProvider>
+      <CursorFollower />
+      <ScrollProgress />
       <SmoothScrollProvider>
         <div className="app-wrap">
           <nav className="site-nav">

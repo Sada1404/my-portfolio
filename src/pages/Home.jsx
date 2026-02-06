@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import CursorFollower from "../components/CursorFollower";
 import RevealOnScroll from "../components/RevealOnScroll";
-import Scene3DBackground from "../components/Scene3DBackground";
+import GraphNodesBackground from "../components/GraphNodesBackground";
+import DraggableGlobe3D from "../components/DraggableGlobe3D";
+import ScrollDownHint from "../components/ScrollDownHint";
+import ExperienceTimeline from "../components/ExperienceTimeline";
 import ProjectCardDynamic from "../components/ProjectCardDynamic";
 import ProjectDetailPanel from "../components/ProjectDetailPanel";
-import ScrollProgress from "../components/ScrollProgress";
 import AutoPlayVideo from "../components/AutoPlayVideo";
 import Rotate3DOnHover from "../components/Rotate3DOnHover";
 import SkillLine from "../components/SkillLine";
@@ -26,12 +27,10 @@ export default function Home() {
 
   return (
     <>
-      <CursorFollower />
-      <ScrollProgress />
-
       <main className="site site--home">
         <section className="hero hero--revamp">
-          <Scene3DBackground className="hero__scene" />
+          <GraphNodesBackground className="hero__scene" />
+          <DraggableGlobe3D className="hero__globe" />
           <div className="hero__content">
             <Rotate3DOnHover>
               <div className="hero-inner">
@@ -81,6 +80,7 @@ export default function Home() {
               </div>
             </Rotate3DOnHover>
           </div>
+          <ScrollDownHint />
         </section>
 
         <section id="projects-section" className="section section--projects-layout">
@@ -123,37 +123,17 @@ export default function Home() {
           </RevealOnScroll>
         </section>
 
-        {/* Overview: Experience – preview 2 cards + link */}
+        {/* Overview: Experience + Education timeline flow */}
         <section className="section section--overview">
           <RevealOnScroll>
-            <h2 className="section-title section-title--bright">Professional Experience</h2>
+            <h2 className="section-title section-title--bright">Experience & Education</h2>
             <p className="section-lead section-lead--bright">
-              Recent roles and impact. Full details with company images on the Experience page.
+              Journey in time — education and professional roles. Full details on the Experience page.
             </p>
-            <div className="overview-cards">
-              {experience.slice(0, 2).map((job, i) => (
-                <motion.article
-                  key={job.company}
-                  className="overview-card"
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                >
-                  {job.image && (
-                    <img src={job.image} alt="" className="overview-card__image" />
-                  )}
-                  <div className="overview-card__body">
-                    <h3 className="overview-card__role">{job.role}</h3>
-                    <p className="overview-card__company">{job.company}</p>
-                    <p className="overview-card__meta">{job.period}</p>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-            <div className="section-cta">
-              <Link to="/experience" className="section-cta__link">View full experience →</Link>
-            </div>
+            <ExperienceTimeline
+              experience={experience}
+              education={resumeData.education}
+            />
           </RevealOnScroll>
         </section>
 

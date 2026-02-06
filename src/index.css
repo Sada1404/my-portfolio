@@ -339,7 +339,7 @@ canvas {
 /* ---------- Hero revamp (with Three.js) ---------- */
 .hero--revamp {
   position: relative;
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,9 +353,13 @@ canvas {
   z-index: 0;
 }
 
+.hero__globe {
+  z-index: 1;
+}
+
 .hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
 }
 
@@ -394,6 +398,124 @@ canvas {
 .cta--outline:hover {
   background: var(--accent-red-dim);
   color: #fff;
+}
+
+/* ---------- Scroll down hint (Janissne-style) ---------- */
+.scroll-down-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scroll-down-hint__text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.scroll-down-hint__chevron {
+  font-size: 1.2rem;
+  color: var(--accent-red);
+}
+
+/* ---------- Experience timeline (flow) ---------- */
+.experience-timeline {
+  position: relative;
+  max-width: 640px;
+  margin: 2rem auto 0;
+  padding-left: 1.5rem;
+}
+
+.experience-timeline__item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.experience-timeline__dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+.experience-timeline__line {
+  position: absolute;
+  left: -1.2rem;
+  top: 1.25rem;
+  bottom: -0.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-red), transparent);
+  opacity: 0.4;
+}
+
+.experience-timeline__item:last-of-type .experience-timeline__line {
+  display: none;
+}
+
+.experience-timeline__card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.experience-timeline__card-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.experience-timeline__card-body {
+  padding: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-timeline__type {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent-red);
+  text-transform: uppercase;
+}
+
+.experience-timeline__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0.25rem 0 0.2rem 0;
+}
+
+.experience-timeline__subtitle {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin: 0 0 0.2rem 0;
+}
+
+.experience-timeline__meta {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.experience-timeline__end {
+  height: 0;
 }
 
 /* ---------- Projects layout (sidebar + main) ---------- */
@@ -686,6 +808,9 @@ canvas {
 /* ---------- Projects page (grid) ---------- */
 .site--projects {
   padding-top: 2rem;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 .page-title {
@@ -715,11 +840,24 @@ canvas {
 
 .section--project-detail-overlay {
   position: relative;
+  width: 100%;
+  min-width: 100%;
+  max-width: none;
   margin-top: 2rem;
-  padding: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 2rem 1.25rem;
   background: rgba(15, 15, 22, 0.9);
   border: 1px solid var(--border);
   border-radius: 12px;
+  box-sizing: border-box;
+}
+
+/* Ensure detail panel and hero always use full width of the overlay */
+.site--projects .section--project-detail-overlay .project-detail-panel,
+.site--projects .section--project-detail-overlay .project-detail-panel__hero-wrap {
+  width: 100%;
+  max-width: none;
 }
 
 .detail-close-btn {
@@ -814,7 +952,7 @@ canvas {
 }
 
 .skills-group__list li {
-  padding: 0.2rem 0;
+  padding: 10px;
 }
 
 .experience-list {
@@ -1114,9 +1252,9 @@ canvas {
 /* ---------- 3D Skills Sphere (CSS3D nodes) ---------- */
 .skills-sphere3d-wrap {
   width: 100%;
-  max-width: 600px;
-  height: 420px;
-  margin: 0 auto 2rem;
+  max-width: 720px;
+  height: 720px;
+  margin: 0 auto 2.5rem;
   position: relative;
 }
 
@@ -1124,39 +1262,41 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 6px 10px;
-  background: rgba(15, 15, 22, 0.95);
-  border: 1px solid rgba(220, 38, 38, 0.3);
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  gap: 6px;
+  padding: 10px 14px;
   color: #f1f5f9;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   white-space: nowrap;
   pointer-events: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover: subtle scale + glow (CSS only; no movement toward cursor) */
+.skills-sphere3d-node:hover .skills-sphere3d-node__inner {
+  transform: scale(1.5);
 }
 
 .skills-sphere3d-node__icon {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
 .skills-sphere3d-node__letter {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(220, 38, 38, 0.2);
-  border-radius: 8px;
-  font-size: 12px;
+  background: rgba(220, 38, 38, 0.25);
+  border-radius: 10px;
+  font-size: 14px;
   color: #fca5a5;
 }
 
 .skills-sphere3d-node__label {
-  max-width: 80px;
+  max-width: 110px;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;

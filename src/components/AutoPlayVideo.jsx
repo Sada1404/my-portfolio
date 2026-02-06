@@ -143,11 +143,12 @@ export default function AutoPlayVideo({
             setTypingDone(true);
             // Immediately set video opacity to full and remove overlay (no slow fade)
             vidOpacity.set(1);
-            // Try to play immediately (also handled in vidSpring subscriber)
+            // Try to play immediately; retry after a short delay in case video wasn't ready
             attemptPlay();
+            const retry = window.setTimeout(() => attemptPlay(), 400);
             // Immediately hide overlay and message (quick removal)
             setShowMessage(false);
-            return () => { };
+            return () => clearTimeout(retry);
         }
 
         stepTyping();
@@ -247,29 +248,32 @@ export default function AutoPlayVideo({
                 height: "-webkit-fill-available",
             }}
         >
-            {/* Video element: hidden until typingDone, then fade in and play */}
-            <motion.video
-                ref={videoRef}
-                src={src}
-                poster={poster}
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                className="apv-video apv-video--fill"
-                controls={false}
-                style={{
-                    opacity: vidSpring,
-                }}
-                onPlay={() => {
-                    setIsPlaying(true);
-                    document.documentElement.classList.add("hide-custom-cursor");
-                }}
-                onPause={() => {
-                    setIsPlaying(false);
-                    document.documentElement.classList.remove("hide-custom-cursor");
-                }}
-            />
+            {/* Video: 270deg rotation wrapper so portrait video displays correctly */}
+            <div className="apv-video-rotate-wrap" aria-hidden>
+                <motion.video
+                    ref={videoRef}
+                    src={src}
+                    poster={poster}
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="apv-video apv-video--fill"
+                    controls={false}
+                    style={{
+                        opacity: vidSpring,
+                    }}
+                    onCanPlay={() => typingDone && attemptPlay()}
+                    onPlay={() => {
+                        setIsPlaying(true);
+                        document.documentElement.classList.add("hide-custom-cursor");
+                    }}
+                    onPause={() => {
+                        setIsPlaying(false);
+                        document.documentElement.classList.remove("hide-custom-cursor");
+                    }}
+                />
+            </div>
 
             {/* Overlay block: poster + typed message. IMPORTANT: overlay remains shown until showMessage === true.
           We DO NOT fade it out slowly — we remove it immediately when typingDone triggers setShowMessage(false).
@@ -292,21 +296,23 @@ export default function AutoPlayVideo({
                             height: "100%",
                         }}
                     >
-                        <div
-                            className="apv-poster apv-poster--fill"
-                            aria-hidden
-                            style={{
-                                position: "absolute",
-                                inset: 0,
-                                width: "-webkit-fill-available",
-                                height: "-webkit-fill-available",
-                                backgroundImage: `url(${poster})`,
-                                backgroundSize: "cover",
-                                backgroundPosition: "center center",
-                                backgroundRepeat: "no-repeat",
-                                pointerEvents: "none",
-                            }}
-                        />
+                        <div className="apv-poster-rotate-wrap" aria-hidden>
+                            <div
+                                className="apv-poster apv-poster--fill"
+                                aria-hidden
+                                style={{
+                                    position: "absolute",
+                                    inset: 0,
+                                    width: "100%",
+                                    height: "100%",
+                                    backgroundImage: `url(${poster})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center center",
+                                    backgroundRepeat: "no-repeat",
+                                    pointerEvents: "none",
+                                }}
+                            />
+                        </div>
 
                         <motion.div
                             className="apv-message"

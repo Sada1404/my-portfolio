@@ -26,7 +26,7 @@ export default function SkillsPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.15 }}
         >
-          Move the cursor (rocket) near the sphere for a gravity effect on skill nodes.
+          Drag to rotate the sphere. Hover over a skill for a highlight.
         </motion.p>
       </section>
 

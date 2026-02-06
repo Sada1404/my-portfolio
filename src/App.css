@@ -60,6 +60,43 @@
   min-height: 100vh;
   height: -webkit-fill-available;
   border-radius: 0;
+  overflow: hidden;
+}
+
+/* 270deg rotation: wrapper sized so rotated video fills viewport */
+.apv-video-rotate-wrap {
+  position: absolute;
+  width: 100vh;
+  height: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(270deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apv-video-rotate-wrap .apv-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Same 270deg rotation for poster so cover matches video */
+.apv-poster-rotate-wrap {
+  position: absolute;
+  width: 100vh;
+  height: 100vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(270deg);
+  overflow: hidden;
+}
+
+.apv-poster-rotate-wrap .apv-poster {
+  width: 100%;
+  height: 100%;
 }
 
 .apv-video--fill {
