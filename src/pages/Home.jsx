@@ -1,17 +1,16 @@
 // src/pages/Home.jsx – Overview of each section + skill line; details on section pages
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import RevealOnScroll from "../components/RevealOnScroll";
 import GraphNodesBackground from "../components/GraphNodesBackground";
 import DraggableGlobe3D from "../components/DraggableGlobe3D";
-import ScrollDownHint from "../components/ScrollDownHint";
 import ExperienceTimeline from "../components/ExperienceTimeline";
-import ProjectCardDynamic from "../components/ProjectCardDynamic";
-import ProjectDetailPanel from "../components/ProjectDetailPanel";
 import AutoPlayVideo from "../components/AutoPlayVideo";
 import Rotate3DOnHover from "../components/Rotate3DOnHover";
 import SkillLine from "../components/SkillLine";
+import ComponentShowcase from "../components/ComponentShowcase";
+import ScrollImageGrid from "../components/ScrollImageGrid";
 import demo from "../assets/demo.mp4";
 import democover from "../assets/demo-cover.png";
 import projectsData from "../data/projects.json";
@@ -21,14 +20,36 @@ const { profile, projects } = projectsData;
 const sortedProjects = [...(projects || [])].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
 
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState(sortedProjects[0] || null);
   const experience = resumeData.experience || [];
   const achievements = resumeData.achievements || [];
+  const heroRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.18]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.5, 0]);
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const heroBlur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(18px)"]);
+
+  const heroBgImage = sortedProjects[0]?.heroImage || "/be1fd2c74b9befa134541732e66deaa0.jpg";
 
   return (
     <>
       <main className="site site--home">
-        <section className="hero hero--revamp">
+        <section className="hero hero--revamp" ref={heroRef}>
+          <motion.div
+            className="hero-zoom-bg"
+            style={{
+              scale: heroScale,
+              opacity: heroOpacity,
+              y: heroY,
+              filter: heroBlur,
+              backgroundImage: `url(${heroBgImage})`,
+            }}
+          />
           <GraphNodesBackground className="hero__scene" />
           <DraggableGlobe3D className="hero__globe" />
           <div className="hero__content">
@@ -80,36 +101,9 @@ export default function Home() {
               </div>
             </Rotate3DOnHover>
           </div>
-          <ScrollDownHint />
         </section>
 
-        <section id="projects-section" className="section section--projects-layout">
-          <div className="projects-layout">
-            <aside className="projects-sidebar">
-              <h2 className="projects-sidebar__title">Projects</h2>
-              <div className="projects-sidebar__list">
-                {sortedProjects.map((project, index) => (
-                  <ProjectCardDynamic
-                    key={project.id}
-                    project={project}
-                    isSelected={selectedProject?.id === project.id}
-                    onClick={() => setSelectedProject(project)}
-                    layout="sidebar"
-                    index={index}
-                  />
-                ))}
-              </div>
-            </aside>
-            <div className="projects-main">
-              <ProjectDetailPanel project={selectedProject} />
-            </div>
-          </div>
-          <div className="section-cta">
-            <Link to="/projects" className="section-cta__link">View all projects →</Link>
-          </div>
-        </section>
-
-        {/* Overview: Skills – linear moving skill line + link to full page */}
+        {/* Overview: Skills */}
         <section id="skills-overview" className="section section--overview">
           <RevealOnScroll>
             <h2 className="section-title section-title--bright">Technical Skills</h2>
@@ -122,8 +116,61 @@ export default function Home() {
             </div>
           </RevealOnScroll>
         </section>
+        
+        {/* ── Projects: horizontal image cards ────────────────────── */}
+        <section id="projects-section" className="section section--showcase-projects">
+          <RevealOnScroll>
+            <h2 className="section-title section-title--bright">Featured Projects</h2>
+            <p className="section-lead section-lead--bright">
+              Full-stack platforms — click to explore.
+            </p>
+          </RevealOnScroll>
 
-        {/* Overview: Experience + Education timeline flow */}
+          <div className="showcase-cards">
+            {sortedProjects.map((project, i) => (
+              <RevealOnScroll key={project.id} delay={i * 0.1}>
+                <Link to={`/projects/${project.id}`} className="showcase-card">
+                  <motion.div
+                    className="showcase-card__inner"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    style={{ backgroundImage: `url(${project.heroImage || project.thumbnail})` }}
+                  >
+                    <div className="showcase-card__overlay" />
+                    <div className="showcase-card__content">
+                      <span className="showcase-card__label">{project.tags?.[0] || "Project"}</span>
+                      <h3 className="showcase-card__title">{project.shortTitle || project.title}</h3>
+                      <p className="showcase-card__tagline">{project.tagline}</p>
+                      <span className="showcase-card__btn">View Details →</span>
+                    </div>
+                  </motion.div>
+                </Link>
+              </RevealOnScroll>
+            ))}
+          </div>
+
+          <div className="section-cta">
+            <Link to="/projects" className="section-cta__link">View all projects →</Link>
+          </div>
+        </section>
+
+        {/* ── Scroll Image Grid ──────────────────────────────────── */}
+        <ScrollImageGrid />
+
+        {/* ── Component Library — Live Demos ──────────────────────── */}
+        <section className="section section--components">
+          <RevealOnScroll>
+            <h2 className="section-title section-title--bright">Custom Component Library</h2>
+            <p className="section-lead section-lead--bright">
+              24 scalable, reusable components — built like Material UI / Chakra UI.
+              <br />Interact with the live demos below.
+            </p>
+          </RevealOnScroll>
+          <ComponentShowcase />
+        </section>
+
+
+        {/* Overview: Experience */}
         <section className="section section--overview">
           <RevealOnScroll>
             <h2 className="section-title section-title--bright">Experience & Education</h2>
@@ -137,7 +184,7 @@ export default function Home() {
           </RevealOnScroll>
         </section>
 
-        {/* Overview: Achievements – preview + link */}
+        {/* Overview: Achievements */}
         <section className="section section--overview">
           <RevealOnScroll>
             <h2 className="section-title section-title--bright">Achievements</h2>
@@ -150,11 +197,12 @@ export default function Home() {
               ))}
             </ul>
             <div className="section-cta">
-              <Link to="/achievements" className="section-cta__link">View all achievements →</Link>
+              <Link to="/about" className="section-cta__link">View all achievements →</Link>
             </div>
           </RevealOnScroll>
         </section>
 
+        {/* Demo video
         <section className="section section--demo">
           <RevealOnScroll>
             <h2 className="section-title section-title--bright">Demo</h2>
@@ -166,7 +214,7 @@ export default function Home() {
               />
             </div>
           </RevealOnScroll>
-        </section>
+        </section> */}
 
         <footer className="footer">
           <p>

@@ -10,107 +10,202 @@
   },
   "projects": [
     {
-      "id": "mangwale-rider-app",
-      "title": "Mangwale Rider App",
-      "shortTitle": "Rider App",
-      "tagline": "Real-time last-mile delivery partner app",
-      "summary": "React Native partner app for riders — real-time order assignment, FCM push, Socket.IO, wallet, attendance, and multi-stop deliveries.",
-      "description": "Full-stack rider onboarding and delivery management: rider registration with OTP/KYC, attendance with optional selfie, real-time order assignment via WebSocket + FCM, multi-stop deliveries, earnings & wallet, and admin back-office. Built with React Native (or rider-web React SPA), NestJS (rider-api), PostgreSQL, Socket.IO, Razorpay, and Firebase.",
-      "quote": "Real-time delivery at your fingertips.",
+      "id": "mangwale-search",
+      "title": "Mangwale Search API v2.0",
+      "shortTitle": "Search API",
+      "tagline": "AI-powered cross-marketplace search engine",
+      "summary": "Self-hosted, module-aware search engine powering product and store discovery across all Mangwale modules — full-text, semantic vector search (KNN/HNSW), and geospatial filtering.",
+      "description": "Self-hosted, module-aware cross-marketplace search engine powering product and store discovery across all Mangwale modules (Food, E-commerce, Grocery, Pharmacy, Pet Care). Combines full-text search, AI-powered semantic search, and geospatial filtering with intelligent ranking. Integrated into the Flutter MangwaleUser app for real-time search across the customer marketplace.",
+      "quote": "Search smarter. Discover faster.",
       "thumbnail": "/download.jpg",
       "heroImage": "/be1fd2c74b9befa134541732e66deaa0.jpg",
-      "tags": ["React Native", "Firebase", "Socket.IO", "FCM", "Real-time"],
-      "techStack": ["React Native", "NestJS", "PostgreSQL", "Socket.IO", "Firebase", "Razorpay", "Leaflet"],
+      "tags": ["NestJS", "Python", "OpenSearch", "AI/ML", "Docker"],
+      "techStack": ["NestJS 10", "TypeScript", "Python", "OpenSearch 2.x", "MySQL 8", "Redis 7", "ClickHouse", "Kafka/Redpanda", "Docker Compose", "Traefik"],
+      "company": "Mangwale Pvt. Ltd",
+      "period": "Aug 2025 – Present",
+      "liveUrl": "https://search.mangwale.ai",
       "links": {
-        "playStore": "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME",
-        "liveDemo": null,
-        "caseStudy": null
+        "liveDemo": "https://search.mangwale.ai"
       },
       "features": [
-        "Rider registration with OTP/KYC and document upload",
-        "Real-time order offers via WebSocket and FCM push",
-        "Multi-stop delivery flow with map and earnings",
-        "Wallet, withdrawals, and admin approval flow",
-        "Attendance with optional selfie and geo"
+        "20+ search endpoints supporting full-text, semantic vector (HNSW/KNN), category-based, and geospatial distance/zone-based search",
+        "Python-based embedding microservice for generating vector embeddings powering semantic similarity search",
+        "Intelligent time-based ranking (breakfast/lunch/dinner boosting) and trending score calculation from order velocity",
+        "Two-tier caching system (in-memory L1 + Redis L2) with geo-bucketed cache keys for low-latency responses",
+        "MySQL-to-OpenSearch sync pipeline computing popularity, quality, and trending scores",
+        "Search event logging to ClickHouse for analytics, trending query detection, and search behavior tracking"
       ],
-      "order": 1
+      "order": 1,
+      "size": "large"
     },
     {
       "id": "mangwale-dispatcher",
-      "title": "Mangwale Dispatcher Platform",
+      "title": "Dispatcher Portal & Enterprise Dashboard",
       "shortTitle": "Dispatcher",
-      "tagline": "Full-stack delivery management & B2B API",
-      "summary": "React dispatcher dashboard and NestJS API — multi-provider logistics (Porter, LoadShare, Mangwale), live tracking, and business.mangwale.com B2B portal.",
-      "description": "The Mangwale Dispatcher Platform consists of dispatcher-web (React SPA) and dispatcher-api (NestJS). It powers internal operations (track.mangwale.in) for delivery management, orders, riders, and admin, plus the B2B portal business.mangwale.com where enterprises sign up, get API keys, manage wallet (Razorpay recharge), and integrate delivery via REST API (quote, create order, cancel, track). Multi-provider logistics with Porter, LoadShare, and Mangwale Rider API; webhooks for status sync; live tracking with Leaflet/Google Maps.",
+      "tagline": "Full-stack delivery management & B2B API platform",
+      "summary": "React dispatcher dashboard and NestJS API — multi-provider logistics (Porter, LoadShare, Mangwale), live tracking, and business.mangwale.com B2B portal with API keys, wallet, and invoices.",
+      "description": "Full-stack logistics dispatch platform and B2B enterprise self-service dashboard served as a dual-domain React + NestJS application. Dispatcher portal manages real-time order lifecycle with live rider tracking on Leaflet maps, multi-stop dispatch, OTP validation, and automated 3PL routing. Enterprise dashboard enables B2B clients to place orders via API, manage prepaid wallets, download PDF invoices, and generate API keys.",
       "quote": "One platform. Multi-provider logistics. Enterprise-ready API.",
       "thumbnail": "/be1fd2c74b9befa134541732e66deaa0.jpg",
       "heroImage": "/download.jpg",
-      "tags": ["React", "NestJS", "PostgreSQL", "Leaflet", "Razorpay", "B2B"],
-      "techStack": ["React 19", "NestJS 11", "TypeORM", "PostgreSQL", "Leaflet", "React Query", "Razorpay"],
+      "tags": ["React", "NestJS", "PostgreSQL", "Leaflet", "B2B"],
+      "techStack": ["NestJS 11", "TypeScript", "React 19", "PostgreSQL", "TypeORM", "MySQL", "Leaflet", "Bootstrap 5", "TailwindCSS", "Razorpay", "Firebase FCM", "Porter API", "Loadshare API", "MSG91", "Puppeteer", "NGINX", "AWS EC2"],
+      "company": "Mangwale Pvt. Ltd",
+      "period": "March 2025 – Present",
+      "liveUrl": "https://track.mangwale.in",
       "links": {
-        "playStore": null,
         "liveDemo": "https://business.mangwale.com",
-        "tracking": "https://track.mangwale.in",
-        "caseStudy": null
+        "tracking": "https://track.mangwale.in"
       },
       "features": [
+        "NestJS backend with modular architecture: orders, live-tracking, enterprise accounts, webhooks, delivery pricing, 3PL plugin adapters",
+        "Enterprise B2B API platform with API key issuance, rate limiting, Razorpay wallet recharge (UPI QR), and Puppeteer PDF invoice generation",
+        "Dual-database architecture (PostgreSQL + MySQL read mirror) with session-based authentication and PostgreSQL session store",
         "Multi-provider logistics: Porter, LoadShare, Mangwale (unified getQuote, createOrder, cancel, track)",
-        "B2B portal: business.mangwale.com — landing, registration, dashboard, wallet, API keys, invoices, in-app API docs",
-        "Enterprise REST API with API key auth, rate limiting, test/live environments",
-        "Live rider location and status; public tracking pages with map and status timeline",
-        "Single and multi-stop orders; webhooks to helper.mangwale.com and provider webhooks"
+        "NGINX dual-domain TLS reverse proxy deployed to AWS EC2"
       ],
-      "order": 2
+      "order": 2,
+      "size": "large"
     },
     {
-      "id": "rider-api-web",
-      "title": "Rider Onboarding & Delivery Platform",
-      "shortTitle": "Rider API/Web",
-      "tagline": "Rider lifecycle, shipments, and admin back-office",
-      "summary": "NestJS rider-api and React rider-web — rider registration (OTP/KYC, Razorpay), attendance, real-time shipments, wallet, and admin panel with WebSocket + FCM.",
-      "description": "Full-stack rider onboarding and delivery management: rider-api (NestJS, TypeORM, PostgreSQL) and rider-web (React 19, Vite). Rider registration with OTP (Msg91 + email), selfie and documents, shifts, Razorpay registration fee; rider app with dashboard, new order popup (WebSocket + FCM), order flow (pickup → delivery), wallet, profile; admin panel for riders, shipments, attendance, zones, withdrawals. Real-time via Socket.IO namespaces (rider + admin) and FCM; maps with Leaflet and optional Google Maps; routing with Google Distance Matrix, OSRM, Turf.",
-      "quote": "From registration to delivery — one seamless flow.",
+      "id": "mangwale-rider-app",
+      "title": "Rider Partner App",
+      "shortTitle": "Rider App",
+      "tagline": "Real-time last-mile delivery partner app",
+      "summary": "Full-stack rider platform — React Native mobile app, React WebView hybrid, PWA — real-time order management, GPS tracking, earnings wallet, and withdrawals.",
+      "description": "Full-stack rider platform for onboarding, real-time order management, GPS tracking, earnings wallet, and withdrawals. Includes a React Native mobile app (Mangwale Rider Partner) built from scratch, a React WebView hybrid variant, and a browser PWA — all powered by the partner.mangwale.com NestJS backend. Also includes an admin panel for KYC approval, shipment management, and zone configuration.",
+      "quote": "Real-time delivery at your fingertips.",
       "thumbnail": "/download.jpg",
       "heroImage": "/be1fd2c74b9befa134541732e66deaa0.jpg",
-      "tags": ["NestJS", "React", "Socket.IO", "FCM", "Razorpay", "PostgreSQL"],
-      "techStack": ["NestJS 11", "React 19", "Vite 7", "TypeORM", "PostgreSQL", "Socket.IO", "Firebase", "Razorpay", "Leaflet"],
+      "tags": ["React Native", "NestJS", "Socket.IO", "Firebase"],
+      "techStack": ["NestJS 11", "React Native", "React", "PostgreSQL", "Socket.io", "JWT", "Razorpay", "Firebase FCM", "AWS EC2"],
+      "company": "Mangwale Pvt. Ltd",
+      "period": "June 2025 – Present",
+      "liveUrl": "https://partner.mangwale.com",
       "links": {
-        "playStore": null,
-        "liveDemo": null,
-        "caseStudy": null
+        "playStore": "https://play.google.com/store/apps/details?id=com.mangwale.rider",
+        "liveDemo": "https://partner.mangwale.com"
       },
       "features": [
-        "Rider registration: OTP (Msg91 + email), address, selfie, documents, shifts, Razorpay; reupload via token links",
-        "Rider auth: password and OTP login; password reset; rider JWT for REST and WebSocket",
-        "Shipments: single and multi-stop; status lifecycle; assignments with timeouts; earnings with rate cards",
-        "Real-time: rider namespace (new_order, order_updated, order_cancelled); admin notifications namespace; FCM push",
-        "Wallet and withdrawal requests with admin approval; attendance with optional selfie and geo"
+        "React Native mobile app from scratch with rider onboarding, real-time order management, GPS tracking, and earnings withdrawal",
+        "50+ TypeORM migrations covering riders, shipments, multi-stop orders, KYC documents, attendance, GPS history, earnings wallet, rate cards, and zones",
+        "Real-time order offer system using Socket.io WebSocket gateway with Firebase FCM fallback",
+        "GPS proximity-based OTP delivery confirmation (configurable 100m radius) and earnings model with paisa-level integer precision",
+        "React WebView hybrid bridge with custom DOM events for native navigation"
       ],
-      "order": 3
+      "order": 3,
+      "size": "medium"
     },
     {
-      "id": "driphunter-admin",
+      "id": "mangwale-helper",
+      "title": "Helper Portal",
+      "shortTitle": "Helper Portal",
+      "tagline": "Order management, voice calls, and QR generation",
+      "summary": "Helper portal for order management, Exotel voice calls, QR code generation with Node Canvas, and push notifications with dynamic SMS gateway selection.",
+      "description": "Helper portal for order management and other micro-services, Exotel voice calls, QR code generation, and push notifications. Built custom QR template engine using Node Canvas and Sharp with configurable backgrounds, fonts, borders, and colors.",
+      "quote": "Micro-services, macro impact.",
+      "thumbnail": "/be1fd2c74b9befa134541732e66deaa0.jpg",
+      "heroImage": "/download.jpg",
+      "tags": ["NestJS", "React", "Exotel", "Docker"],
+      "techStack": ["NestJS 10", "React", "PostgreSQL", "MySQL", "Exotel", "Node Canvas", "Docker Compose", "NGINX"],
+      "company": "Mangwale Pvt. Ltd",
+      "period": "Nov 2025 – Jan 2026",
+      "liveUrl": "https://helper.mangwale.com",
+      "links": {
+        "liveDemo": "https://helper.mangwale.com"
+      },
+      "features": [
+        "Custom QR template engine using Node Canvas and Sharp with configurable backgrounds, fonts, borders, and colors",
+        "Exotel voice calling API with full call logging (SID, status, duration) to PostgreSQL",
+        "OTP-based vendor authentication and dynamic SMS gateway configurable from database at runtime",
+        "Containerized frontend and backend with Docker Compose behind NGINX on AWS EC2"
+      ],
+      "order": 4,
+      "size": "small"
+    },
+    {
+      "id": "mangwale-marketplace",
+      "title": "Mangwale Customer Marketplace",
+      "shortTitle": "Mangwale.com",
+      "tagline": "Multi-module marketplace for food, grocery, parcel & rentals",
+      "summary": "Customer marketplace for food, grocery, parcel, and vehicle rental. Next.js SSR web app + Flutter mobile apps. Firebase social auth, full e-commerce flows, and multi-language support.",
+      "description": "Customer marketplace for food, grocery, parcel, and vehicle rental. Next.js SSR web app + Flutter mobile apps (MangwaleUser v3.3/v3.4). Firebase social auth (Google, Facebook, Apple), full e-commerce flows, i18next multi-language with RTL support, Redux Persist state management, and Google Maps address management.",
+      "quote": "Everything you need, delivered.",
+      "thumbnail": "/download.jpg",
+      "heroImage": "/be1fd2c74b9befa134541732e66deaa0.jpg",
+      "tags": ["Next.js", "Flutter", "Firebase", "Redux"],
+      "techStack": ["React", "Next.js", "Flutter", "TypeScript", "Material UI", "Redux Toolkit", "Firebase Auth", "Google Maps API", "i18next"],
+      "company": "Mangwale Pvt. Ltd",
+      "period": "Sept 2025 – Present",
+      "liveUrl": "https://mangwale.com",
+      "links": {
+        "liveDemo": "https://mangwale.com",
+        "playStore": "https://play.google.com/store/apps/details?id=com.mangwale_store_app"
+      },
+      "features": [
+        "Multi-module marketplace with server-side rendering for SEO (food, grocery, parcel, rental verticals)",
+        "Flutter customer mobile apps (MangwaleUser v3.3 and v3.4) with feature parity to web platform",
+        "Full e-commerce flows: cart, multi-step checkout with Google Maps address selection, coupon and cashback systems",
+        "Firebase social authentication (Google, Facebook, Apple) with i18next multi-language and RTL support",
+        "Flutter vendor mobile app (VendorApp v3.5) for store owners with order management and push notifications"
+      ],
+      "order": 5,
+      "size": "medium"
+    },
+    {
+      "id": "driphunter",
       "title": "Driphunter Admin Panel",
       "shortTitle": "Driphunter",
-      "tagline": "Admin tools and e-commerce integrations",
-      "summary": "Admin panel with Instagram and shipping integrations, automation, and reporting.",
-      "description": "Admin tools and back-office for Driphunter: Instagram integration, shipping integrations, automation workflows, and reporting. Built with CodeIgniter and custom API integrations.",
+      "tagline": "E-commerce admin with social media automation",
+      "summary": "E-commerce admin portal for a fashion brand with automated Instagram/Facebook product syncing and Shiprocket/Bluedart shipping integration.",
+      "description": "E-commerce admin portal for a fashion brand with product, collection, and order management. Automated social media and shipping workflows. Built complete admin panel from scratch with automated Instagram and Facebook product syncing, and integrated Shiprocket and Bluedart shipping APIs for automated order fulfillment.",
       "quote": "Streamline operations. Scale with automation.",
       "thumbnail": "/be1fd2c74b9befa134541732e66deaa0.jpg",
       "heroImage": "/download.jpg",
-      "tags": ["CodeIgniter", "API", "Automation", "Instagram"],
-      "techStack": ["CodeIgniter", "PHP", "MySQL", "REST API"],
+      "tags": ["React.js", "PHP", "Instagram API", "Shipping"],
+      "techStack": ["React.js", "PHP (CodeIgniter)", "Bootstrap", "Instagram API", "Facebook API", "Shiprocket", "Bluedart"],
+      "company": "Avhad Enterprises",
+      "period": "Aug 2024 – March 2025",
+      "liveUrl": "https://driphunter.in",
       "links": {
-        "playStore": null,
-        "liveDemo": null,
-        "caseStudy": null
+        "liveDemo": "https://driphunter.in"
       },
       "features": [
-        "Instagram integration for content and analytics",
-        "Shipping and logistics API integrations",
-        "Automation and reporting tools"
+        "Complete admin panel from scratch with product, collection, and order management",
+        "Automated Instagram and Facebook product syncing and content publishing",
+        "Shiprocket and Bluedart shipping APIs for automated order fulfillment and real-time tracking",
+        "Reduced manual operations by 40%"
       ],
-      "order": 4
+      "order": 6,
+      "size": "medium"
+    },
+    {
+      "id": "sportz-saga",
+      "title": "SportzSaaga E-Commerce Platform",
+      "shortTitle": "SportzSaaga",
+      "tagline": "Niche e-commerce for carrom boards & accessories",
+      "summary": "Full e-commerce platform with Razorpay payments, multi-provider shipping, and Amazon listing sync. Increased online sales by 30% QoQ.",
+      "description": "Niche e-commerce platform for carrom boards and accessories with full shopping flows and multi-provider payment and shipping integration. Built complete e-commerce platform from scratch with product catalog, cart, checkout, and Amazon product listing sync. Integrated Razorpay payments and Shiprocket/Bluedart shipping.",
+      "quote": "From niche to scale — e-commerce done right.",
+      "thumbnail": "/download.jpg",
+      "heroImage": "/be1fd2c74b9befa134541732e66deaa0.jpg",
+      "tags": ["PHP", "Python", "Razorpay", "E-commerce"],
+      "techStack": ["PHP (CodeIgniter)", "Python", "MySQL", "JavaScript", "Bootstrap", "Razorpay", "Shiprocket", "Bluedart"],
+      "company": "Avhad Enterprises",
+      "period": "Oct 2024 – Jan 2025",
+      "liveUrl": "https://test-zone.xyz/sportz_saga",
+      "links": {
+        "liveDemo": "https://test-zone.xyz/sportz_saga"
+      },
+      "features": [
+        "Complete e-commerce platform from scratch with product catalog, cart, and checkout",
+        "Razorpay payment integration with multiple payment methods",
+        "Shiprocket and Bluedart shipping integration for automated fulfillment",
+        "Amazon product listing sync for cross-platform sales",
+        "30% quarter-on-quarter increase in online sales"
+      ],
+      "order": 7,
+      "size": "small"
     }
   ]
 }

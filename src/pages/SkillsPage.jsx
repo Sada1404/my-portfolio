@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import RevealOnScroll from "../components/RevealOnScroll";
 import SkillsSphere3D from "../components/SkillsSphere3D";
+import SkillsArchitecture from "../components/SkillsArchitecture";
 import resumeData from "../data/resume.json";
 
 export default function SkillsPage() {
@@ -36,29 +37,11 @@ export default function SkillsPage() {
         </div>
       </section>
 
-      <section className="section section--resume">
+      <section className="section section--resume" style={{ overflow: "visible" }}>
         <RevealOnScroll>
-          <h2 className="section-title section-title--bright">By category</h2>
-          <div className="skills-list-detail skills-list-detail--icons">
-            {Object.entries(skills).map(([group, items]) => (
-              <div key={group} className="skills-group">
-                <h3 className="skills-group__title skills-group__title--bright">{group}</h3>
-                <ul className="skills-group__list skills-group__list--icons">
-                  {(items || []).map((item) => {
-                    const name = typeof item === "string" ? item : item?.name;
-                    const icon = typeof item === "object" && item?.icon ? item.icon : null;
-                    return (
-                      <li key={name} className="skills-group__item">
-                        {icon && <img src={icon} alt="" className="skills-group__icon" />}
-                        <span>{name}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <h2 className="section-title hero section-title--bright">Architecture & Stack</h2>
         </RevealOnScroll>
+        <SkillsArchitecture skills={skills} />
       </section>
 
       <div className="section section--back">

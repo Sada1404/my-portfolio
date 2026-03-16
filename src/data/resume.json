@@ -1,15 +1,21 @@
 {
   "technicalSkills": {
     "Languages & Frameworks": [
+      { "name": "Python", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
       { "name": "JavaScript (ES6+)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
       { "name": "TypeScript", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
       { "name": "PHP (CodeIgniter)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" }
     ],
     "Front-end": [
       { "name": "React.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { "name": "Next.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
       { "name": "React Native", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { "name": "Bootstrap", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+      { "name": "Flutter", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+      { "name": "Redux Toolkit", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+      { "name": "Material UI", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" },
+      { "name": "Bootstrap 5", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
       { "name": "Tailwind CSS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { "name": "Framer Motion", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg" },
       { "name": "HTML5", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
       { "name": "CSS3", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
       { "name": "Vite", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" }
@@ -18,86 +24,203 @@
       { "name": "Node.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
       { "name": "NestJS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" },
       { "name": "Express.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+      { "name": "FastAPI", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
+      { "name": "REST APIs", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { "name": "WebSockets (Socket.io)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" },
       { "name": "Microservices", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" }
     ],
-    "State Management": [
-      { "name": "React Context API", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { "name": "Redux", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" }
+    "Search & AI": [
+      { "name": "OpenSearch", "icon": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*z9zTutAp7o1JwcpAvaTJvg.png" },
+      { "name": "Semantic Search", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+      { "name": "Vector/KNN Search", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" }
     ],
     "Databases": [
-      { "name": "MySQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       { "name": "PostgreSQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { "name": "MySQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { "name": "Redis", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
       { "name": "Firebase", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
     ],
-    "APIs & Integrations": [
-      { "name": "REST APIs", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { "name": "Google APIs", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" }
-    ],
-    "DevOps & Tools": [
-      { "name": "AWS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+    "Cloud & DevOps": [
+      { "name": "AWS (EC2, S3)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
       { "name": "Docker", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+      { "name": "NGINX", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
+      { "name": "GitHub Actions", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
       { "name": "Git", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-      { "name": "GitHub", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-      { "name": "Jenkins", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
-      { "name": "Jest", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" },
-      { "name": "Figma", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" }
+      { "name": "Xcode", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg" }
+    ],
+    "Integrations": [
+      { "name": "Razorpay", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { "name": "Firebase (Auth, FCM)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+      { "name": "Google Maps API", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
+      { "name": "Puppeteer", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/puppeteer/puppeteer-original.svg" }
+    ],
+    "Tools": [
+      { "name": "Figma", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { "name": "Postman", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+      { "name": "Swagger", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" }
     ]
   },
   "experience": [
     {
+      "id": "mangwale",
       "company": "Mangwale Pvt. Ltd",
       "role": "Full Stack Developer (Team Lead)",
       "location": "Nashik, MH",
       "period": "March 2025 – Present",
+      "type": "Full-time",
       "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop",
+      "summary": "Architected and delivered 5 production platforms from scratch, handling frontend, backend, database design, and deployment independently. Reduced dispatch time by 60% and built a cross-marketplace search engine with AI-powered semantic search.",
+      "description": "Full Stack Developer with team lead responsibilities at Mangwale, a multi-module marketplace platform for food, grocery, parcel, and vehicle rental. Independently shipped 5 live platforms owning frontend (React.js, Next.js, Flutter, React Native), backend (Python, Node.js, NestJS), databases (PostgreSQL, MySQL, OpenSearch, Redis), and cloud deployment (AWS EC2, NGINX, Docker). Built real-time systems with Socket.io and Firebase FCM, payment integration with Razorpay, and logistics APIs with Porter and Loadshare.",
+      "skills": ["React.js", "React Native", "Next.js", "Flutter", "NestJS", "Node.js", "Python", "PostgreSQL", "MySQL", "OpenSearch", "Redis", "Docker", "AWS EC2", "NGINX", "Socket.io", "Firebase FCM", "Razorpay", "TypeORM", "Leaflet", "Puppeteer"],
+      "projects": [
+        {
+          "name": "Search API v2.0",
+          "url": "https://search.mangwale.ai",
+          "slug": "mangwale-search",
+          "description": "Cross-marketplace search engine combining full-text, semantic vector search (OpenSearch KNN/HNSW), and geospatial filtering with Python-based embedding services. 20+ search endpoints, two-tier caching, and ClickHouse analytics.",
+          "tech": ["NestJS", "Python", "OpenSearch", "Redis", "ClickHouse", "Docker"]
+        },
+        {
+          "name": "Dispatcher Portal",
+          "url": "https://track.mangwale.in",
+          "slug": "mangwale-dispatcher",
+          "description": "Full-stack logistics dispatch platform managing real-time order lifecycle with live rider tracking on Leaflet maps, multi-stop dispatch, OTP validation, and automated 3PL routing (Porter, Loadshare).",
+          "tech": ["React 19", "NestJS 11", "PostgreSQL", "Leaflet", "Razorpay", "Firebase FCM"]
+        },
+        {
+          "name": "Enterprise Dashboard",
+          "url": "https://business.mangwale.com",
+          "slug": "mangwale-enterprise",
+          "description": "B2B enterprise self-service dashboard enabling clients to place orders via API, manage prepaid wallets, download PDF invoices, and generate API keys with rate limiting.",
+          "tech": ["React", "NestJS", "PostgreSQL", "Razorpay", "Puppeteer"]
+        },
+        {
+          "name": "Rider Partner App",
+          "url": "https://partner.mangwale.com",
+          "slug": "mangwale-rider-app",
+          "description": "Full-stack rider platform for onboarding, real-time order management, GPS tracking, earnings wallet, and withdrawals. React Native mobile app + React WebView hybrid + PWA.",
+          "tech": ["React Native", "NestJS", "PostgreSQL", "Socket.io", "Firebase FCM", "Razorpay"]
+        },
+        {
+          "name": "Helper Portal",
+          "url": "https://helper.mangwale.com",
+          "slug": "mangwale-helper",
+          "description": "Helper portal for order management, Exotel voice calls, QR code generation with Node Canvas, and push notifications with dynamic SMS gateway selection.",
+          "tech": ["React", "NestJS", "PostgreSQL", "Exotel", "Node Canvas", "Docker"]
+        },
+        {
+          "name": "Mangwale Marketplace",
+          "url": "https://mangwale.com",
+          "slug": "mangwale-marketplace",
+          "description": "Multi-module Next.js marketplace with Firebase social auth, Redux Persist, i18next multi-language, and Google Maps address management for food, grocery, parcel, and rental.",
+          "tech": ["Next.js", "Flutter", "Redux Toolkit", "Firebase Auth", "Google Maps API"]
+        }
+      ],
       "points": [
-        "Pioneered micro-frontend architecture using React.js and NestJS, streamlining onboarding and boosting front-end efficiency by 40%.",
-        "Engineered the Track Dispatcher Portal, slashing dispatch time by 15 seconds and increasing order fulfillment rates by 12%; integrated real-time APIs with Porter and LoadShare.",
-        "Developed Mangwale V2 (PaaS) admin panel with modular e-commerce features. Deployed on AWS using Docker and NGINX for high availability.",
-        "Deployed containerized microservices (Java Spring Boot, Node.js) on AWS and implemented CI/CD with Jenkins and GitHub Actions."
+        "Architected and delivered 5 production platforms from scratch, handling frontend, backend, database design, and deployment independently",
+        "Reduced dispatch time by 60% by building an automated order processing pipeline with cron-based scheduling, webhook-driven routing, and real-time rider tracking via Socket.io and Firebase FCM",
+        "Built a cross-module search API using NestJS, OpenSearch, and Python-based embedding services, powering full-text, semantic (vector/KNN), and geospatial search across all marketplace modules",
+        "Engineered a dual-database architecture (PostgreSQL + MySQL read mirror) serving 4 NestJS microservices with session-based and JWT authentication, Swagger-documented REST APIs, and 50+ TypeORM migrations",
+        "Built enterprise B2B logistics API platform with API key management, rate limiting, prepaid wallet system (Razorpay + UPI QR), and automated PDF invoice generation using Puppeteer",
+        "Built React Native rider mobile app from scratch featuring real-time order offers via Socket.io, GPS proximity-based OTP delivery confirmation, and earnings wallet with paisa-level precision",
+        "Maintained Flutter mobile apps for customer (MangwaleUser v3.3/v3.4) and vendor (VendorApp v3.5) platforms",
+        "Implemented QR code template engine using Node Canvas and Sharp, Exotel voice calling integration, and dynamic SMS gateway selection at runtime",
+        "Deployed containerized services using Docker Compose behind NGINX reverse proxies with TLS termination on AWS EC2"
+      ],
+      "gallery": [
+        { "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop", "alt": "Team collaboration at Mangwale", "type": "team" },
+        { "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop", "alt": "Development workspace", "type": "team" },
+        { "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", "alt": "Dispatcher dashboard", "type": "project" },
+        { "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop", "alt": "Logistics and delivery", "type": "project" }
       ]
     },
     {
+      "id": "avhad",
       "company": "Avhad Enterprises",
       "role": "Software R&D Executive",
       "location": "Nashik, MH",
       "period": "July 2024 – March 2025",
+      "type": "Full-time",
       "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=200&h=200&fit=crop",
+      "summary": "Developed centralized social media automation tools and e-commerce platforms. Reduced manual operations by 40% through shipping and social media automation integrations.",
+      "description": "Software R&D Executive at Avhad Enterprises, responsible for building e-commerce platforms, social media automation tools, and shipping integrations. Developed centralized tools using React.js and PHP (CodeIgniter), integrating Instagram and Facebook APIs for automated product syncing and content publishing. Built complete e-commerce platforms with Razorpay payments and multi-provider shipping.",
+      "skills": ["React.js", "PHP (CodeIgniter)", "Python", "MySQL", "JavaScript", "Bootstrap", "Instagram API", "Facebook API", "Razorpay", "Shiprocket", "Bluedart", "Figma"],
+      "projects": [
+        {
+          "name": "Driphunter",
+          "url": "https://driphunter.in",
+          "slug": "driphunter",
+          "description": "E-commerce admin panel for a fashion brand with automated Instagram/Facebook product syncing and Shiprocket/Bluedart shipping integration. Reduced manual operations by 40%.",
+          "tech": ["React.js", "PHP (CodeIgniter)", "Bootstrap", "Instagram API", "Facebook API", "Shiprocket", "Bluedart"]
+        },
+        {
+          "name": "SportzSaaga",
+          "url": "https://test-zone.xyz/sportz_saga",
+          "slug": "sportz-saga",
+          "description": "Full e-commerce platform for carrom boards and accessories with Razorpay payments, Shiprocket/Bluedart shipping, and Amazon listing sync. Increased online sales by 30% QoQ.",
+          "tech": ["PHP (CodeIgniter)", "Python", "MySQL", "JavaScript", "Bootstrap", "Razorpay", "Shiprocket"]
+        }
+      ],
       "points": [
-        "Built centralized social media automation tools and shipping integrations using React.js and PHP.",
-        "Developed a dynamic collection engine and web configuration panel with Figma-accurate interfaces."
+        "Developed centralized social media automation tools using React.js and PHP (CodeIgniter), integrating Instagram and Facebook APIs for automated product syncing and content publishing",
+        "Reduced manual operations by 40% by building shipping integrations with Shiprocket and Bluedart APIs for automated order fulfillment and real-time tracking",
+        "Built driphunter.in e-commerce admin panel with automated Instagram/Facebook product syncing and Shiprocket/Bluedart shipping integration",
+        "Built SportzSaaga full e-commerce platform with Razorpay payments, Shiprocket/Bluedart shipping, and Amazon listing sync, increasing online sales by 30% QoQ",
+        "Delivered Figma-accurate, responsive UI interfaces for dynamic collection engines and web configuration panels across multiple client projects"
+      ],
+      "gallery": [
+        { "src": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop", "alt": "Team at Avhad Enterprises", "type": "team" },
+        { "src": "https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&h=400&fit=crop", "alt": "Project work", "type": "project" },
+        { "src": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop", "alt": "Collaboration", "type": "team" }
       ]
     },
     {
+      "id": "abb",
       "company": "ABB India Pvt. Ltd.",
       "role": "Web Application Developer (Intern)",
       "location": "Nashik, MH",
       "period": "Aug 2023 – Feb 2024",
+      "type": "Internship",
       "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=200&h=200&fit=crop",
+      "summary": "Built PowerApps and SharePoint-based automation tools for internal purchase order workflows. Awarded Runner-up in ABB India's internal automation software challenge.",
+      "description": "Web Application Developer Intern at ABB India, one of the world's leading technology companies. Built PowerApps and SharePoint-based automation tools for internal purchase order workflows, reducing manual workload by 50%. Delivered end-user training sessions for automation tools across multiple departments.",
+      "skills": ["PowerApps", "SharePoint", "Automation", "JavaScript", "HTML5", "CSS3"],
+      "projects": [],
       "points": [
-        "Created PowerApps and SharePoint-based automation tools for purchase systems.",
-        "Delivered end-user training and achieved a 50% reduction in manual workload."
+        "Built PowerApps and SharePoint-based automation tools for internal purchase order workflows, reducing manual workload by 50%",
+        "Delivered end-user training sessions for automation tools across multiple departments",
+        "Awarded Runner-up in ABB India's internal automation software challenge"
       ]
     },
     {
+      "id": "hal",
       "company": "Hindustan Aeronautics Limited (HAL)",
       "role": "ERP Intern",
       "location": "Nashik, MH",
       "period": "May 2023 – Jun 2023",
+      "type": "Internship",
       "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&h=200&fit=crop",
-      "points": ["Supported ERP system optimization and cross-departmental IT support tasks."]
+      "summary": "Supported ERP system optimization and cross-departmental IT operations including data management and reporting at India's premier aerospace company.",
+      "description": "ERP Intern at Hindustan Aeronautics Limited (HAL), India's premier aerospace and defense company. Supported ERP system optimization and cross-departmental IT operations including data management, reporting, and system maintenance.",
+      "skills": ["ERP Systems", "Data Management", "Reporting", "IT Operations"],
+      "projects": [],
+      "points": [
+        "Supported ERP system optimization and cross-departmental IT operations including data management and reporting"
+      ]
     }
   ],
   "achievements": [
-    "Reduced dispatch time by 60% through process automation at Mangwale.",
-    "Developed Shopify-like admin tools for multi-feature management.",
-    "Runner-up in ABB India's automation software challenge."
+    "Independently built and deployed 5 production platforms from scratch at Mangwale (full stack + cloud)",
+    "Reduced dispatch time by 60% through automated order processing and real-time tracking",
+    "Built cross-marketplace search engine with AI-powered semantic search (OpenSearch KNN/HNSW)",
+    "Reduced manual operations by 40% at Avhad Enterprises via shipping and social media automation",
+    "Runner-up in ABB India internal automation software challenge"
   ],
   "education": {
     "degree": "Bachelor of Engineering (B.E.) in Computer Engineering",
     "institution": "Guru Gobind Singh College of Engineering & Research Centre, Nashik",
     "period": "2020 – 2024",
-    "percentage": "70.20%"
+    "cgpa": "7.6"
   },
   "languages": ["English (Fluent)", "Hindi (Fluent)", "Marathi (Native)"]
 }

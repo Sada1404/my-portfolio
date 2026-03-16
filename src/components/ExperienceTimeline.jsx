@@ -10,7 +10,7 @@ export default function ExperienceTimeline({ experience = [], education = null }
       type: "education",
       title: education.degree,
       subtitle: education.institution,
-      meta: `${education.period}${education.percentage ? ` · ${education.percentage}%` : ""}`,
+      meta: `${education.period}${education.cgpa ? ` · CGPA: ${education.cgpa}` : education.percentage ? ` · ${education.percentage}%` : ""}`,
       key: "edu",
     });
   }

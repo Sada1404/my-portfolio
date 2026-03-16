@@ -10,8 +10,10 @@ export default function ParticlesBackground({ color = "#1f2040", density = 0.000
         const canvas = canvasRef.current;
         if (!canvas) return;
         const ctx = canvas.getContext("2d");
-        let w = (canvas.width = window.innerWidth);
-        let h = (canvas.height = window.innerHeight);
+        const dpr = window.devicePixelRatio || 1;
+        let w = (canvas.width = window.innerWidth * dpr);
+        let h = (canvas.height = window.innerHeight * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
         const particleCount = Math.max(30, Math.floor(w * h * density));
         const particles = new Array(particleCount).fill(0).map(() => createParticle(w, h));
@@ -31,8 +33,10 @@ export default function ParticlesBackground({ color = "#1f2040", density = 0.000
         }
 
         function onResize() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
+            const dprNow = window.devicePixelRatio || 1;
+            w = canvas.width = window.innerWidth * dprNow;
+            h = canvas.height = window.innerHeight * dprNow;
+            ctx.setTransform(dprNow, 0, 0, dprNow, 0, 0);
             // optional: repopulate particles on large resize
         }
 

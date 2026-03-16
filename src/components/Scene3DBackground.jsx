@@ -51,7 +51,7 @@ export default function Scene3DBackground({ className = "" }) {
     }
     geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     const material = new THREE.PointsMaterial({
-      color: 0xdc2626,
+      color: 0x00b4d8,
       size: 0.08,
       transparent: true,
       opacity: 0.4,

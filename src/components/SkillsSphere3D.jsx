@@ -68,7 +68,7 @@ export default function SkillsSphere3D({ skills = {} }) {
     const lineGeometry = new THREE.BufferGeometry();
     lineGeometry.setAttribute("position", new THREE.Float32BufferAttribute(linePositions, 3));
     const lineMaterial = new THREE.LineBasicMaterial({
-      color: 0xdc2626,
+      color: 0x00b4d8,
       transparent: true,
       opacity: 0.25,
     });

@@ -1,8 +1,9 @@
 // src/components/GraphNodesBackground.jsx – Metoro-style moving graph nodes + connecting lines
 import React, { useRef, useEffect, useState } from "react";
 
-const NODE_COUNT = 80;
-const CONNECT_DISTANCE = 120;
+const IS_MOBILE = typeof window !== "undefined" && window.innerWidth < 768;
+const NODE_COUNT = IS_MOBILE ? 35 : 80;
+const CONNECT_DISTANCE = IS_MOBILE ? 80 : 120;
 const NODE_SPEED = 0.15;
 const LINE_OPACITY = 0.12;
 
@@ -29,16 +30,19 @@ export default function GraphNodesBackground({ className = "" }) {
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    let width = window.innerWidth;
-    let height = window.innerHeight;
+    let width = 0;
+    let height = 0;
     let animationId;
 
     function setSize() {
+      const dpr = window.devicePixelRatio || 1;
       width = window.innerWidth;
       height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-      if (nodesRef.current.length === 0) nodesRef.current = initNodes(width, height);
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      // Re-initialize nodes so they always fill the current viewport
+      nodesRef.current = initNodes(width, height);
     }
     setSize();
 
@@ -67,7 +71,7 @@ export default function GraphNodesBackground({ className = "" }) {
           const dist = Math.hypot(dx, dy);
           if (dist < CONNECT_DISTANCE) {
             const alpha = (1 - dist / CONNECT_DISTANCE) * LINE_OPACITY;
-            ctx.strokeStyle = `rgba(220, 38, 38, ${alpha * 0.5})`;
+            ctx.strokeStyle = `rgba(0, 180, 216, ${alpha * 0.5})`;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -84,7 +88,7 @@ export default function GraphNodesBackground({ className = "" }) {
         ctx.arc(n.x, n.y, 1.2, 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.fillStyle = "rgba(220, 38, 38, 0.25)";
+      ctx.fillStyle = "rgba(0, 180, 216, 0.25)";
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i];
         ctx.beginPath();
@@ -96,13 +100,14 @@ export default function GraphNodesBackground({ className = "" }) {
     }
     draw();
 
-    window.addEventListener("resize", () => {
+    function handleResize() {
       setSize();
-    });
+    }
+    window.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", setSize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [mounted]);
 

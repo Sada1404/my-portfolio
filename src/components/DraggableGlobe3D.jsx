@@ -31,9 +31,10 @@ export default function DraggableGlobe3D({ className = "" }) {
     renderer.domElement.style.cursor = "grab";
 
     // Sphere geometry with wireframe + dots style (Addverb-like)
-    const geometry = new THREE.SphereGeometry(1, 32, 32);
+    const isMob = window.innerWidth < 768;
+    const geometry = new THREE.SphereGeometry(1, isMob ? 20 : 32, isMob ? 20 : 32);
     const material = new THREE.MeshBasicMaterial({
-      color: 0x1a0a0a,
+      color: 0x041e2e,
       transparent: true,
       opacity: 0.85,
       wireframe: false,
@@ -41,8 +42,9 @@ export default function DraggableGlobe3D({ className = "" }) {
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
-    // Dots on surface (points)
-    const dotCount = 800;
+    // Dots on surface (points) — fewer on mobile for performance
+    const isMobile = window.innerWidth < 768;
+    const dotCount = isMobile ? 300 : 800;
     const dotGeo = new THREE.BufferGeometry();
     const dotPos = new Float32Array(dotCount * 3);
     for (let i = 0; i < dotCount; i++) {
@@ -55,7 +57,7 @@ export default function DraggableGlobe3D({ className = "" }) {
     }
     dotGeo.setAttribute("position", new THREE.BufferAttribute(dotPos, 3));
     const dotMat = new THREE.PointsMaterial({
-      color: 0xdc2626,
+      color: 0x00b4d8,
       size: 0.02,
       transparent: true,
       opacity: 0.8,
